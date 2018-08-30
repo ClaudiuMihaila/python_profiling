@@ -87,7 +87,9 @@ __Instrumenting a program can cause performance changes, and may in some cases l
 Profilers
 =========
 
-* <a href="https://docs.python.org/3/library/profile.html" target="_blank"><H2>cProfile</H2></a>Python standard library provided profiler, recommended for most users. It is a C extension with reasonable overhead that makes it suitable for profiling long-running programs.  
+* <H2><a href="https://docs.python.org/3/library/profile.html" target="_blank">cProfile</a></H2>   
+Python standard library provided profiler, recommended for most users. It is a C extension with reasonable overhead that makes it suitable for profiling long-running programs.  
+
 These statistics can be formatted into reports via the pstats module.
 ```
 python -m cProfile -s cumtime target.py
@@ -140,27 +142,29 @@ ps.print_stats()
 print(s.getvalue())
 ```
 
-* <H2><a href="https://pyflame.readthedocs.io/en/latest/" target="_blank">Pyflame</a>&nbsp&&nbsp<a href="https://github.com/brendangregg/FlameGraph" target="_blank">Flamegraph</a></H2>
+* <H2><a href="https://pyflame.readthedocs.io/en/latest/" target="_blank">Pyflame</a>&<a href="https://github.com/brendangregg/FlameGraph" target="_blank">Flamegraph</a></H2>
 
-    Pyflame is based on the Linux ptrace(2) system call. This allows it to take snapshots of the Python call stack without explicit instrumentation.  
-    Pyflame uses a few Linux-specific interfaces, so unfortunately it is the only platform supported at this moment.
+Pyflame is based on the Linux ptrace(2) system call. This allows it to take snapshots of the Python call stack without explicit instrumentation.  
+Pyflame uses a few Linux-specific interfaces, so unfortunately it is the only platform supported at this moment.
 
-    Flame graphs are a visualization of profiled software, allowing the most frequent code-paths to be identified quickly and accurately.
-    ```
-    pyflame -r 0.001 -o profile.txt -t python3 target.py && flamegraph.pl profile.txt > myprofile.svg
-    ```
+Flame graphs are a visualization of profiled software, allowing the most frequent code-paths to be identified quickly and accurately.
+```shell
+pyflame -r 0.001 -o profile.txt -t python3 target.py \
+&& flamegraph.pl profile.txt > myprofile.svg
+```
 
-    ![alt text](pyflame.png "Pyflame graph chart")
-* <a href="https://github.com/what-studio/profiling" target="_blank"><H2>Profiling</H2></a>
+![alt text](pyflame.png "Pyflame graph chart")
 
-    The profiling package is an interactive continuous Python profiler. It is inspired from Unity 3D profiler. This package provides these features:  
+* <H2><a href="https://github.com/what-studio/profiling" target="_blank">Profiling</a></H2>
+
+The profiling package is an interactive continuous Python profiler. It is inspired from Unity 3D profiler. This package provides these features:  
     Profiling statistics keep the frame stack.  
     An interactive TUI profiling statistics viewer.  
     Utilities for remote profiling.  
     Thread aware CPU timer.  
 
-  ```
-  profiling target.py
-    ```
+```shell
+profiling target.py
+```
 
-    ![alt text](profiling.png "Profiling UI")
+![alt text](profiling.png "Profiling UI")
