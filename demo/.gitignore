@@ -1,0 +1,7 @@
+/venv
+/.idea
+/__pycache__
+/.DS_Store
+/out.txt
+/phflame.out
+*.pyc

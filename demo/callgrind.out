@@ -1,0 +1,94 @@
+main executed in 0.1446 seconds
+
+Clock type: CPU
+Ordered by: totaltime, desc
+
+name                                  ncall  tsub      ttot      tavg      
+target.py:1 <module>                  1      0.000038  0.170439  0.170439
+..ib/python3.7/random.py:38 <module>  2      0.000467  0.166394  0.083197
+target.py:28 main                     1      0.000054  0.144327  0.144327
+target.py:13 find_indexes             1      0.000025  0.059171  0.059171
+target.py:14 <listcomp>               1      0.008775  0.059146  0.059146
+target.py:7 initialize_collection     1      0.000024  0.051849  0.051849
+..on3.7/random.py:264 Random.shuffle  1      0.008343  0.051667  0.051667
+...7/random.py:224 Random._randbelow  2499   0.025803  0.043320  0.000017
+target.py:18 write_results            1      0.016197  0.033253  0.033253
+..lib._bootstrap>:978 _find_and_load  10/2   0.000312  0.025787  0.002579
+..strap>:948 _find_and_load_unlocked  10/2   0.000151  0.025463  0.002546
+..lib._bootstrap>:663 _load_unlocked  10/2   0.000329  0.023779  0.002378
+..>:722 SourceFileLoader.exec_module  4/2    0.000072  0.023123  0.005781
+..rap>:211 _call_with_frames_removed  16/2   0.000135  0.021964  0.001373
+..b/python3.7/hashlib.py:54 <module>  1      0.000146  0.010899  0.010899
+..portlib._bootstrap>:882 _find_spec  10     0.000394  0.010344  0.001034
+..b._bootstrap>:576 module_from_spec  10     0.000173  0.009229  0.000923
+..bootstrap_external>:1272 find_spec  10     0.000077  0.009207  0.000921
+..bootstrap_external>:1240 _get_spec  10     0.000615  0.009130  0.000913
+..xternal>:1356 FileFinder.find_spec  34     0.001681  0.007719  0.000227
+.. ExtensionFileLoader.create_module  6      0.000106  0.007651  0.001275
+..b.py:116 __get_openssl_constructor  14     0.000150  0.004718  0.000337
+..ib.py:73 __get_builtin_constructor  8      0.000075  0.004441  0.000555
+.._bootstrap_external>:56 _path_join  150    0.001425  0.004210  0.000028
+.._bootstrap_external>:58 <listcomp>  150    0.001449  0.002333  0.000016
+..lib/python3.7/bisect.py:1 <module>  1      0.000022  0.002071  0.002071
+..nal>:793 SourceFileLoader.get_code  4      0.000180  0.001945  0.000486
+.._bootstrap>:504 _init_module_attrs  10     0.000384  0.001337  0.000134
+.._bootstrap_external>:74 _path_stat  48     0.000309  0.000945  0.000020
+..nal>:914 SourceFileLoader.get_data  4      0.000292  0.000685  0.000171
+..>:147 _ModuleLockManager.__enter__  10     0.000102  0.000653  0.000065
+..ap_external>:271 cache_from_source  8      0.000181  0.000644  0.000080
+..b._bootstrap>:222 _verbose_message  172    0.000606  0.000606  0.000004
+..._bootstrap>:403 ModuleSpec.cached  14     0.000083  0.000597  0.000043
+..xternal>:1203 _path_importer_cache  43     0.000207  0.000561  0.000013
+..ootstrap_external>:369 _get_cached  10     0.000116  0.000514  0.000051
+..ap>:318 _installed_safely.__exit__  10     0.000124  0.000441  0.000044
+..b._bootstrap>:157 _get_module_lock  10     0.000178  0.000427  0.000043
+..xternal>:1351 FileFinder._get_spec  10     0.000124  0.000393  0.000039
+..ap_external>:523 _compile_bytecode  4      0.000075  0.000373  0.000093
+..ootstrap_external>:93 _path_isfile  10     0.000065  0.000334  0.000033
+..p>:859 _ImportLockContext.__exit__  30     0.000184  0.000272  0.000009
+..ap_external>:84 _path_is_mode_type  10     0.000072  0.000269  0.000027
+..>:855 _ImportLockContext.__enter__  30     0.000176  0.000264  0.000009
+..on3.7/random.py:88 Random.__init__  1      0.000011  0.000240  0.000240
+<frozen importlib._bootstrap>:176 cb  10     0.000137  0.000233  0.000023
+..python3.7/random.py:97 Random.seed  1      0.000020  0.000229  0.000229
+..p>:151 _ModuleLockManager.__exit__  10     0.000073  0.000219  0.000022
+..ernal>:574 spec_from_file_location  10     0.000136  0.000212  0.000021
+..bootstrap>:58 _ModuleLock.__init__  10     0.000109  0.000192  0.000019
+target.py:8 <listcomp>                1      0.000158  0.000158  0.000158
+..48 ExtensionFileLoader.exec_module  6      0.000065  0.000146  0.000024
+..bootstrap>:103 _ModuleLock.release  10     0.000112  0.000146  0.000015
+..._bootstrap>:1009 _handle_fromlist  13     0.000082  0.000141  0.000011
+../lib/python3.7/random.py:72 Random  2      0.000036  0.000130  0.000065
+..bootstrap_external>:62 _path_split  8      0.000076  0.000125  0.000016
+.._bootstrap>:78 _ModuleLock.acquire  10     0.000093  0.000124  0.000012
+..mportlib._bootstrap>:321 <genexpr>  40     0.000119  0.000119  0.000003
+..ib._bootstrap_external>:51 _r_long  12     0.000079  0.000118  0.000010
+..bootstrap_external>:36 _relax_case  34     0.000116  0.000116  0.000003
+..ernal>:471 _validate_timestamp_pyc  4      0.000043  0.000114  0.000028
+..tstrap_external>:438 _classify_pyc  4      0.000054  0.000114  0.000028
+..mportlib._bootstrap>:719 find_spec  10     0.000069  0.000109  0.000011
+..l>:951 SourceFileLoader.path_stats  4      0.000026  0.000109  0.000027
+..._bootstrap>:416 ModuleSpec.parent  10     0.000075  0.000107  0.000011
+..mportlib._bootstrap>:792 find_spec  10     0.000066  0.000098  0.000010
+..3.7/functools.py:37 update_wrapper  1      0.000049  0.000089  0.000089
+..urceFileLoader._check_name_wrapper  4      0.000031  0.000044  0.000011
+..:1029 ExtensionFileLoader.__init__  6      0.000043  0.000043  0.000007
+..p>:311 _installed_safely.__enter__  10     0.000043  0.000043  0.000004
+..bootstrap>:369 ModuleSpec.__init__  10     0.000041  0.000041  0.000004
+..p>:143 _ModuleLockManager.__init__  10     0.000040  0.000040  0.000004
+..ap>:307 _installed_safely.__init__  10     0.000038  0.000038  0.000004
+..thon3.7/random.py:667 SystemRandom  2      0.000025  0.000037  0.000018
+..tlocale.py:33 getpreferredencoding  2      0.000021  0.000036  0.000018
+..strap>:424 ModuleSpec.has_location  10     0.000030  0.000030  0.000003
+..portlib._bootstrap>:35 _new_module  4      0.000023  0.000023  0.000006
+..s.py:319 IncrementalDecoder.decode  1      0.000012  0.000018  0.000018
+..py:309 IncrementalDecoder.__init__  1      0.000014  0.000017  0.000017
+..719 SourceFileLoader.create_module  4      0.000015  0.000015  0.000004
+..nal>:884 SourceFileLoader.__init__  4      0.000014  0.000014  0.000003
+..:909 SourceFileLoader.get_filename  4      0.000013  0.000013  0.000003
+..py:186 IncrementalEncoder.__init__  1      0.000009  0.000009  0.000009
+..ib/python3.7/functools.py:67 wraps  1      0.000005  0.000005  0.000005
+..py:260 IncrementalDecoder.__init__  1      0.000003  0.000003  0.000003
+
+name           id     tid              ttot      scnt        
+_MainThread    0      140736003343232  0.177379  1         
