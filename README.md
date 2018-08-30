@@ -87,7 +87,8 @@ __Instrumenting a program can cause performance changes, and may in some cases l
 Profilers
 =========
 
-* <a href="https://docs.python.org/3/library/profile.html" target="_blank"><H2>cProfile</H2></a>Python standard library provided profiler, recommended for most users. It is a C extension with reasonable overhead that makes it suitable for profiling long-running programs.
+* <a href="https://docs.python.org/3/library/profile.html" target="_blank"><H2>cProfile</H2></a>Python standard library provided profiler, recommended for most users. It is a C extension with reasonable overhead that makes it suitable for profiling long-running programs.  
+These statistics can be formatted into reports via the pstats module.
 ```
 python -m cProfile -s cumtime target.py
          10075 function calls in 0.054 seconds
@@ -112,6 +113,33 @@ python -m cProfile -s cumtime target.py
         1    0.001    0.001    0.001    0.001 {function seed at 0x7fb1629bf140}
      2500    0.001    0.000    0.001    0.000 {method 'format' of 'str' objects}
 ```
+
+Enable profiling programatically:
+```python
+import cProfile
+
+pr = cProfile.Profile()
+pr.enable()
+# ... do something ...
+pr.disable()
+ps.dump_stats(output_file_path)
+```
+
+Format profile output using pstats:
+```python
+import cProfile, pstats, io
+from pstats import SortKey
+pr = cProfile.Profile()
+pr.enable()
+# ... do something ...
+pr.disable()
+s = io.StringIO()
+sortby = SortKey.CUMULATIVE
+ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
+ps.print_stats()
+print(s.getvalue())
+```
+
 * <H2><a href="https://pyflame.readthedocs.io/en/latest/" target="_blank">Pyflame</a>&nbsp&&nbsp<a href="https://github.com/brendangregg/FlameGraph" target="_blank">Flamegraph</a></H2>
 
     Pyflame is based on the Linux ptrace(2) system call. This allows it to take snapshots of the Python call stack without explicit instrumentation.  
@@ -125,11 +153,11 @@ python -m cProfile -s cumtime target.py
     ![alt text](pyflame.png "Pyflame graph chart")
 * <a href="https://github.com/what-studio/profiling" target="_blank"><H2>Profiling</H2></a>
 
-The profiling package is an interactive continuous Python profiler. It is inspired from Unity 3D profiler. This package provides these features:
-* Profiling statistics keep the frame stack.
-* An interactive TUI profiling statistics viewer.
-* Utilities for remote profiling.
-* Thread aware CPU timer.
+    The profiling package is an interactive continuous Python profiler. It is inspired from Unity 3D profiler. This package provides these features:  
+    Profiling statistics keep the frame stack.  
+    An interactive TUI profiling statistics viewer.  
+    Utilities for remote profiling.  
+    Thread aware CPU timer.  
 
   ```
   profiling target.py
