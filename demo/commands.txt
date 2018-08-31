@@ -1,7 +1,20 @@
 # run docker container
-docker run -ti -v /Users/cmihaila/learning/profiling/demo:/proj --cap-add SYS_PTRACE pyflame:latest /bin/bash
+docker run -ti \
+    -v /Users/cmihaila/learning/profiling/demo:/proj \
+    --cap-add SYS_PTRACE \
+    pyflame:latest /bin/bash
+
+
+# profile with cProfile sort by tottime
+python -m cProfile -s tottime target.py
+
 
 # profile with pyflame pipeline into flamegraph
 pyflame -r 0.001 -t python target.py | flamegraph.pl > myprofile.svg
 
-pyflame -r 0.001 -o profile.txt -t python3 target.py && flamegraph.pl profile.txt > myprofile.svg
+pyflame -r 0.001 -o profile.txt -t python3 target.py \
+    && flamegraph.pl profile.txt > myprofile.svg
+
+
+#prifile with profiling
+profiling target.py

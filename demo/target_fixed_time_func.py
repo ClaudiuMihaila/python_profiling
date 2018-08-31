@@ -1,6 +1,5 @@
 from random import shuffle
 from timeit import time_func
-
 size = 2500
 
 @time_func
@@ -20,6 +19,7 @@ def write_results(indexes):
     with open("out.txt", "w") as file:
         for i in range(size):
             file.write("value {} at index {}\n".format(i, indexes[i]))
+
 
 @time_func
 def main():

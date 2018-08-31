@@ -1,7 +1,5 @@
 from random import shuffle
 from timeit import time_func
-
-
 size = 2500
 
 
